@@ -51,7 +51,7 @@ function averageNumbers(arr) {
   if (arr.length === 0) {
     return null;
   }
-  console.log(sumNumbers(arr));
+  //console.log(sumNumbers(arr));
   let avg = sumNumbers(arr) / arr.length
   return avg;
 }
@@ -59,6 +59,45 @@ averageNumbers(numbersAvg);
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+
+function averageWordLength(arr) {
+  let stringLengthArray = [];
+  if (arr.length !== 0) {
+    for (var i in arr) {
+      stringLengthArray.push(arr[i].length);
+      //console.log(stringLengthArray);
+    }
+    return sumNumbers(stringLengthArray) / stringLengthArray.length
+  }
+  return null
+}
+
+// Iteration #4.1: Bonus
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+
+function avg(arr) {
+  let stringLengthArray = [];
+  if (arr.length !== 0) {
+    arr.forEach(function (el) {
+      if (typeof el === 'number') {
+        stringLengthArray.push(el)
+      } else if (typeof el === 'string') {
+        stringLengthArray.push(el.length)
+      } else if (typeof el === 'boolean') {
+        if (el === true) {
+          stringLengthArray.push(1)
+        } else {
+          stringLengthArray.push(0)
+        }
+      }
+    });
+
+    let avg = (sumNumbers(stringLengthArray) / stringLengthArray.length);
+    avg = avg.toFixed(2);
+    return avg * 1 // Used this trick to convert this to Number and not a String.
+  }
+  return null;
+};
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
