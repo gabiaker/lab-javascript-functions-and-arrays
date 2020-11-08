@@ -91,12 +91,12 @@ function avg(arr) {
         }
       }
     });
-
+    ;
     let avg = (sumNumbers(stringLengthArray) / stringLengthArray.length);
     avg = avg.toFixed(2);
     return avg * 1 // Used this trick to convert this to Number and not a String.
   }
-  return null;
+  return null
 };
 
 // Iteration #5: Unique arrays
@@ -113,6 +113,14 @@ const wordsUnique = [
   'simple',
   'bring'
 ];
+
+function uniquifyArray(array) {
+  if (array.length !== 0) {
+    return array.filter((value, index) => array.indexOf(value) === index);
+  }
+  return null
+}
+
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
